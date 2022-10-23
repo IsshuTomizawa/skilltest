@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+    <header>
+        <meta charset="UTF-8">
+        <title>word answer</title>
+    </header>
+
+    <body>
+        <form action="{% url 'index' %}" method="post">
+            {% csrf_token %}
+            <button type="submit">home</button><!--excelへ-->
+        </form>
+        <h1>Answer</h1>
+    </body>
+</html>

@@ -6,6 +6,10 @@
     </head>
 
     <body>
+        <form action="{% url 'index' %}" method="post">
+            {% csrf_token %}
+            <button type="submit">home</button>
+        </form>
         <p>word test</p>
         <p>Q1. {{ question|random }}</p>
         <label for="radio1">○</label>
@@ -13,5 +17,10 @@
         <br>
         <label for="radio2">×</label>
         <input id="radio2" name="options" type="radio">
+
+        <form action="{% url 'Wanswer' %}" method="post">
+            {% csrf_token %}
+            <button type="submit">answer</button>
+        </form>
     </body>
 </html>

@@ -9,20 +9,21 @@
         <p>このページはofficeソフトを勉強する人たちに対してのスキルテストです。</p>
         <h3>年齢確認</h3>
         <label for="age">年齢：</label>
-        <input id="name" name="age" type="number" min="0" max="100"> <!--この情報をデータベースに保存-->
+        <input type="number" min="0" max="100" required> <!--この情報をデータベースに保存-->
         <br>
         <form action="{% url 'ET' %}" method="post">
             {% csrf_token %}
-            <button>excel</button><!--excelへ-->
+            <button type="submit">excel</button><!--excelへ-->
         </form>
         <form action="{% url 'WT' %}" method="post">
             {% csrf_token %}
             <button type="submit">word</button><!--wordへ-->
         </form>
-        <form action="{% url 'percent' %}" method="post">
+        <form action="{% url 'parcent' %}" method="post">
             {% csrf_token %}
-            <button type="submit">年齢別正答率</button>
+            <button type="submit">年齢別正答率</button><!--wordへ-->
         </form>
+        
         <p>hello</p>
     </body>
 </html>

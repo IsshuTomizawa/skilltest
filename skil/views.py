@@ -3,11 +3,8 @@ from django.http import HttpResponse
 
 # Create your views here.
 def index(request):
-    if request.method == 'GET':
-        return render(request, 'skil/index.html')
-    elif request.method == 'POST':
-        age = request.POST['age']
-        return HttpResponse('age: {}'. format(age))
+    return render(request, 'skil/index.html')
+
 
 def wordtest(request):
     data = {
@@ -21,8 +18,11 @@ def exceltest(request):
     }
     return render(request, 'skil/excel_test.html', data)
 
-def percent(request):
-    if request.method == 'GET':
-        return render(request, 'skil/percent.html')
-    elif request.method == 'POST':
-        return HttpResponse('まだ')
+def Eanswer(request):
+    return render(request, 'skil/Eanswer.html')
+
+def Wanswer(request):
+    return render(request, 'skil/Wanswer.html')
+
+def parcent(request):
+    return render(request, 'skil/parcent.html')

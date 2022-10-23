@@ -20,9 +20,4 @@ from skil import views as skil_views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('skil/', include('skil.urls')),
-    path('skil/wordtest/', include('skil.urls')),
-    path('skil/exceltest/', include('skil.urls')),
-    path('skil/wordtest/wordanswer/', include('skil.urls')),
-    path('skil/exceltest/excelanswer/', include('skil.urls')),
-    path('skil/percent/', include('skil.urls')),
 ]
