@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>word test</title>
+        <title>net test</title>
     </head>
 
     <body>
@@ -10,15 +10,15 @@
             {% csrf_token %}
             <button type="submit">home</button>
         </form>
-        <p>word test</p>
-        <p>Q1. {{ question|random }}</p>
-        <label for="radio1">○</label>
+        <p>net test</p>
+        <p>Q{{ excel.id }}. {{ excel.ques|random }}</p>
+        <label for="radio1">{{  }}</label>
         <input id="radio1" name="options" type="radio">
         <br>
         <label for="radio2">×</label>
         <input id="radio2" name="options" type="radio">
 
-        <form action="{% url 'Wanswer' %}" method="post">
+        <form action="{% url 'Nanswer' %}" method="post">
             {% csrf_token %}
             <button type="submit">answer</button>
         </form>

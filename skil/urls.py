@@ -3,9 +3,9 @@ from . import views
 
 urlpatterns = [
     path('', views.index, name='index'),
-    path('wordtest/', views.wordtest, name='WT'),
+    path('nettest/', views.nettest, name='NT'),
     path('exceltest/', views.exceltest, name='ET'),
-    path('Wanswer/', views.Wanswer, name='Wanswer'),
+    path('Nanswer/', views.Nanswer, name='Nanswer'),
     path('Eanswer/', views.Eanswer, name='Eanswer'),
-    path('parcent/', views.parcent, name='parcent'),
+    path('parcent/', views.percent, name='percent'),
 ]

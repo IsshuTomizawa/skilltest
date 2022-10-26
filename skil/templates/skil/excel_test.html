@@ -11,12 +11,15 @@
             <button type="submit">home</button><!--excelへ-->
         </form>
         <p>excel test</p>
-        <p>Q1. {{ question|random }}</p>
-        <label for="radio1">○</label>
+        <p>Q1. {{ excel.ques }}</p>
+        <label for="radio1">{{ excel.sele1 }}</label>
         <input id="radio1" name="options" type="radio">
         <br>
-        <label for="radio2">×</label>
+        <label for="radio2">{{ excel.sele2 }}</label>
         <input id="radio2" name="options" type="radio">
+        <br>
+        <label for="radio2">{{ excel.sele3 }}</label>
+        <input id="radio3" name="options" type="radio">
 
         <form action="{% url 'Eanswer' %}" method="post">
             {% csrf_token %}

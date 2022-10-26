@@ -1,28 +1,30 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.http import Http404
+
+from skil.models import Equestion
 
 # Create your views here.
 def index(request):
     return render(request, 'skil/index.html')
 
-
-def wordtest(request):
-    data = {
-        'question': ['1 + 1 = ?', '1 + 2 = ?']
-    }
-    return render(request, 'skil/word_test.html', data)
-
-def exceltest(request):
-    data = {
-        'question': ['1 + 3 = ?', '1 + 4 = ?']
-    }
+def exceltest(request, excel_id):
+    try:
+        excel = Equestion.objects.get()
+    except Equestion.DoesNotExist:
+        raise Http404("Wquestion does not exist")
+    data = {'excel':excel}
     return render(request, 'skil/excel_test.html', data)
+
+def nettest(request):
+    return render(request, 'skil/net_test.html')
 
 def Eanswer(request):
     return render(request, 'skil/Eanswer.html')
 
-def Wanswer(request):
-    return render(request, 'skil/Wanswer.html')
+def Nanswer(request):
+    return render(request, 'skil/Nanswer.html')
 
-def parcent(request):
+
+def percent(request):
     return render(request, 'skil/parcent.html')
