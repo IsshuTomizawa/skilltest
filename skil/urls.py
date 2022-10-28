@@ -7,5 +7,5 @@ urlpatterns = [
     path('exceltest/', views.exceltest, name='ET'),
     path('Nanswer/', views.Nanswer, name='Nanswer'),
     path('Eanswer/', views.Eanswer, name='Eanswer'),
-    path('parcent/', views.percent, name='percent'),
+    path('percent/', views.percent, name='percent'),
 ]

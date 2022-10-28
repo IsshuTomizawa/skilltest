@@ -19,5 +19,5 @@ from skil import views as skil_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('skil/', include('skil.urls')),
+    path('', include('skil.urls')),
 ]

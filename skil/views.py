@@ -8,13 +8,25 @@ from skil.models import Equestion
 def index(request):
     return render(request, 'skil/index.html')
 
-def exceltest(request, excel_id):
+def exceltest(request):
+    '''
     try:
         excel = Equestion.objects.get()
     except Equestion.DoesNotExist:
         raise Http404("Wquestion does not exist")
     data = {'excel':excel}
     return render(request, 'skil/excel_test.html', data)
+    '''
+
+    excel = {
+        'ques': 'a',
+        'sele1': '1',
+        'sele2': '2',
+        'sele3': '3',
+        'answer': 1
+    }
+    return render(request, 'skil/excel_test.html', excel)
+
 
 def nettest(request):
     return render(request, 'skil/net_test.html')
@@ -24,7 +36,6 @@ def Eanswer(request):
 
 def Nanswer(request):
     return render(request, 'skil/Nanswer.html')
-
 
 def percent(request):
     return render(request, 'skil/parcent.html')
