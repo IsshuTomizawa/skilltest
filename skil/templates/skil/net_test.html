@@ -10,13 +10,20 @@
             {% csrf_token %}
             <button type="submit">home</button>
         </form>
+        
         <p>net test</p>
-        <p>Q{{ excel.id }}. {{ excel.ques|random }}</p>
-        <label for="radio1">{{  }}</label>
-        <input id="radio1" name="options" type="radio">
-        <br>
-        <label for="radio2">×</label>
-        <input id="radio2" name="options" type="radio">
+        {% for nt in net %}
+            <p>Q{{ nt.number }}. {{ nt.ques }}</p>
+            <label for="radio1">{{ nt.sele1 }}</label>
+            <input id="radio1" name="options" type="radio">
+            <br>
+            <label for="radio2">{{ nt.sele2 }}</label>
+            <input id="radio2" name="options" type="radio">
+            <br>
+            <label for="radio2">{{ nt.sele3 }}</label>
+            <input id="radio3" name="options" type="radio">
+            <br>
+        {% endfor %}
 
         <form action="{% url 'Nanswer' %}" method="post">
             {% csrf_token %}

@@ -1,3 +1,4 @@
+from email.policy import default
 from django.db import models
 
 # Create your models here.
@@ -11,6 +12,7 @@ class Wquestion(models.Model):
 '''
 
 class Equestion(models.Model):
+    number = models.IntegerField(default=0)
     ques = models.TextField()
     sele1 = models.TextField()
     sele2 = models.TextField()

@@ -6,24 +6,50 @@
     </head>
 
     <body>
-        <form action="{% url 'index' %}" method="post">
-            {% csrf_token %}
-            <button type="submit">home</button><!--excelへ-->
-        </form>
+        <a href="{% url 'index' %}">home</a>
+        
         <p>excel test</p>
-        <p>Q1. {{ ques }}</p>
-        <label for="radio1">{{ sele1 }}</label>
-        <input id="radio1" name="options" type="radio">
-        <br>
-        <label for="radio2">{{ sele2 }}</label>
-        <input id="radio2" name="options" type="radio">
-        <br>
-        <label for="radio2">{{ sele3 }}</label>
-        <input id="radio3" name="options" type="radio">
+        {% for ex in excel %}
+            <form id="options">
+            <p>Q{{ ex.number }}. {{ ex.ques }}</p>
+            <label for="radio1">{{ ex.sele1 }}</label>
+            <input id="radio1" name="options" type="radio" value="1">
+            <br>
+            <label for="radio2">{{ ex.sele2 }}</label>
+            <input id="radio2" name="options" type="radio" value="2">
+            <br>
+            <label for="radio2">{{ ex.sele3 }}</label>
+            <input id="radio3" name="options" type="radio" value="3">
+            <br>
+            </form>
+        {% endfor %}
 
+        <script>
+            let excelbox = document.getElementById('options');
+        </script>
+
+        <div class="pager">
+            <!-- 前のページへのリンク -->
+            {% if excel.has_previous %}
+                <a href="?p={{ excel.previous_page_number }}">前へ</a>
+            {% endif %}
+        
+            <!-- 現在のページ番号と全体のページ数 -->
+            <!--<span>
+                {{ articles.number }} / {{ articles.paginator.num_pages }}
+            </span>-->
+        
+            <!-- 次のページへのリンク -->
+            {% if excel.has_next %}
+                <a href="?p={{ excel.next_page_number }}">次へ</a>
+            {% endif %}
+        </div>
+
+        {% if not excel.has_next %}
         <form action="{% url 'Eanswer' %}" method="post">
             {% csrf_token %}
             <button type="submit">answer</button>
         </form>
+        {% endif %}
     </body>
 </html>
