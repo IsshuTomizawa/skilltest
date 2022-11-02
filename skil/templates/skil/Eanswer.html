@@ -6,10 +6,16 @@
     </header>
 
     <body>
-        <form action="{% url 'index' %}" method="post">
-            {% csrf_token %}
-            <button type="submit">home</button><!--excelへ-->
-        </form>
+        <a href="{% url 'index' %}">home</a>
+        <br>
+        
         <h1>Answer</h1>
+
+        {% for ex in excel %}
+            {{ ex.number }}. {{ ex.answer }}
+            <br>    
+        {% endfor %}
+
+        <a href="{% url 'ES' %}">選択画面へ</a>
     </body>
 </html>

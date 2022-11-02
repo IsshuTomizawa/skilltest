@@ -7,49 +7,158 @@
 
     <body>
         <a href="{% url 'index' %}">home</a>
+        <br>
         
         <p>excel test</p>
-        {% for ex in excel %}
-            <form id="options">
-            <p>Q{{ ex.number }}. {{ ex.ques }}</p>
-            <label for="radio1">{{ ex.sele1 }}</label>
-            <input id="radio1" name="options" type="radio" value="1">
-            <br>
-            <label for="radio2">{{ ex.sele2 }}</label>
-            <input id="radio2" name="options" type="radio" value="2">
-            <br>
-            <label for="radio2">{{ ex.sele3 }}</label>
-            <input id="radio3" name="options" type="radio" value="3">
-            <br>
-            </form>
-        {% endfor %}
 
-        <script>
-            let excelbox = document.getElementById('options');
-        </script>
+        <form id="Q1">
+            
+            <p>Q1. {{ excel.0.ques }}</p>
+            <label for="radio11">{{ excel.0.sele1 }}</label>
+            <input id="radio11" name="option" type="radio" value="1">
+            <label for="radio12">{{ excel.0.sele2 }}</label>
+            <input id="radio12" name="option" type="radio" value="2">
+            <label for="radio13">{{ excel.0.sele3 }}</label>
+            <input id="radio13" name="option" type="radio" value="3">
+            <br>
+        </form>
 
-        <div class="pager">
-            <!-- 前のページへのリンク -->
-            {% if excel.has_previous %}
-                <a href="?p={{ excel.previous_page_number }}">前へ</a>
-            {% endif %}
-        
-            <!-- 現在のページ番号と全体のページ数 -->
-            <!--<span>
-                {{ articles.number }} / {{ articles.paginator.num_pages }}
-            </span>-->
-        
-            <!-- 次のページへのリンク -->
-            {% if excel.has_next %}
-                <a href="?p={{ excel.next_page_number }}">次へ</a>
-            {% endif %}
-        </div>
+        <form id="Q2">
+            
+            <p>Q2. {{ excel.1.ques }}</p>
+            <label for="radio21">{{ excel.1.sele1 }}</label>
+            <input id="radio21" name="option" type="radio" value="1"> 
+            <label for="radio22">{{ excel.1.sele2 }}</label>
+            <input id="radio22" name="option" type="radio" value="2">
+            <label for="radio23">{{ excel.1.sele3 }}</label>
+            <input id="radio23" name="option" type="radio" value="3">
+            <br>
+        </form>
+
+        <form id="Q3">
+            
+            <p>Q3. {{ excel.2.ques }}</p>
+            <label for="radio31">{{ excel.2.sele1 }}</label>
+            <input id="radio31" name="option" type="radio" value="1"> 
+            <label for="radio32">{{ excel.2.sele2 }}</label>
+            <input id="radio32" name="option" type="radio" value="2">   
+            <label for="radio33">{{ excel.2.sele3 }}</label>
+            <input id="radio33" name="option" type="radio" value="3">
+            <br>
+        </form>
+
+        <form id="Q4">
+            
+            <p>Q4. {{ excel.3.ques }}</p>
+            <label for="radio41">{{ excel.3.sele1 }}</label>
+            <input id="radio41" name="option" type="radio" value="1"> 
+            <label for="radio42">{{ excel.3.sele2 }}</label>
+            <input id="radio42" name="option" type="radio" value="2">
+            <label for="radio43">{{ excel.3.sele3 }}</label>
+            <input id="radio43" name="option" type="radio" value="3">
+        <br>
+        </form>
+
+        <form id="Q5">
+            
+            <p>Q5. {{ excel.4.ques }}</p>
+            <label for="radio51">{{ excel.4.sele1 }}</label>
+            <input id="radio51" name="option" type="radio" value="1">
+            <label for="radio52">{{ excel.4.sele2 }}</label>
+            <input id="radio52" name="option" type="radio" value="2">     
+            <label for="radio53">{{ excel.4.sele3 }}</label>
+            <input id="radio53" name="option" type="radio" value="3">
+        <br>
+        </form>
+
+        <form id="Q6">
+            
+            <p>Q6. {{ excel.5.ques }}</p>
+            <label for="radio61">{{ excel.5.sele1 }}</label>
+            <input id="radio61" name="option" type="radio" value="1">           
+            <label for="radio62">{{ excel.5.sele2 }}</label>
+            <input id="radio62" name="option" type="radio" value="2">   
+            <label for="radio63">{{ excel.5.sele3 }}</label>
+            <input id="radio63" name="option" type="radio" value="3">
+        <br>
+        </form>
+
+        <form id="Q7">
+            
+            <p>Q7. {{ excel.6.ques }}</p>
+            <label for="radio71">{{ excel.6.sele1 }}</label>
+            <input id="radio71" name="option" type="radio" value="1">
+            <label for="radio72">{{ excel.6.sele2 }}</label>
+            <input id="radio72" name="option" type="radio" value="2">          
+            <label for="radio73">{{ excel.6.sele3 }}</label>
+            <input id="radio73" name="option" type="radio" value="3">
+        <br>
+        </form>
+
+        <form id="Q8">
+            
+            <p>Q8. {{ excel.7.ques }}</p>
+            <label for="radio81">{{ excel.7.sele1 }}</label>
+            <input id="radio81" name="option" type="radio" value="1">         
+            <label for="radio82">{{ excel.7.sele2 }}</label>
+            <input id="radio82" name="option" type="radio" value="2">
+            <label for="radio83">{{ excel.7.sele3 }}</label>
+            <input id="radio83" name="option" type="radio" value="3">
+        <br>
+        </form>
+
+        <form id="Q9">
+            
+            <p>Q9. {{ excel.8.ques }}</p>
+            <label for="radio91">{{ excel.8.sele1 }}</label>
+            <input id="radio91" name="option" type="radio" value="1">
+            <label for="radio92">{{ excel.8.sele2 }}</label>
+            <input id="radio92" name="option" type="radio" value="2">
+            <label for="radio93">{{ excel.8.sele3 }}</label>
+            <input id="radio93" name="option" type="radio" value="3">
+        <br>
+        </form>
+
+        <form id="Q10">
+            
+            <p>Q10. {{ excel.9.ques }}</p>
+            <label for="radio01">{{ excel.9.sele1 }}</label>
+            <input id="radio01" name="option" type="radio" value="1">         
+            <label for="radio02">{{ excel.9.sele2 }}</label>
+            <input id="radio02" name="option" type="radio" value="2">
+            <label for="radio03">{{ excel.9.sele3 }}</label>
+            <input id="radio03" name="option" type="radio" value="3">
+        <br>
+        </form>
 
         {% if not excel.has_next %}
-        <form action="{% url 'Eanswer' %}" method="post">
-            {% csrf_token %}
-            <button type="submit">answer</button>
-        </form>
+            {% if '5' in request.get_full_path %}
+            <form action="{% url 'Eanswer' excel_id=5 %}" method="post">
+                {% csrf_token %}
+                <button type="submit">answer</button>
+            </form>
+            {% elif '4' in request.get_full_path %}
+            <form action="{% url 'Eanswer' excel_id=4 %}" method="post">
+                {% csrf_token %}
+                <button type="submit">answer</button>
+            </form>
+            {% elif '3' in request.get_full_path %}
+            <form action="{% url 'Eanswer' excel_id=3 %}" method="post">
+                {% csrf_token %}
+                <button type="submit">answer</button>
+            </form>
+            {% elif '2' in request.get_full_path %}
+            <form action="{% url 'Eanswer' excel_id=2 %}" method="post">
+                {% csrf_token %}
+                <button type="submit">answer</button>
+            </form>
+            {% elif '1' in request.get_full_path %}
+            <form action="{% url 'Eanswer' excel_id=1 %}" method="post">
+                {% csrf_token %}
+                <button type="submit">answer</button>
+            </form>
+            {% endif %}
         {% endif %}
     </body>
+    
 </html>

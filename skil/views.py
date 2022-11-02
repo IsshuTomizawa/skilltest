@@ -17,14 +17,18 @@ def nsele(request):
     return render(request, 'skil/nsele.html')
 
 def exceltest(request, excel_id):
-    if request.method == 'GET':
+    #if request.method == 'GET':
+    '''
         exc = Equestion.objects.filter(id__gte=10*excel_id-9).filter(id__lt=10*excel_id+1)
         paginator = Paginator(exc, 1)
         p = request.GET.get('p')
         excel = paginator.get_page(p)
         data = {'excel':excel}
-        return render(request, 'skil/excel_test.html', data)
-    elif request.method == 'POST':
+        '''
+    excel = Equestion.objects.filter(id__gte=10*excel_id-9).filter(id__lt=10*excel_id+1)
+    data = {'excel':excel}
+    return render(request, 'skil/excel_test.html', data)
+    #elif request.method == 'POST':
         
 
 def nettest(request, net_id):
@@ -35,8 +39,11 @@ def nettest(request, net_id):
     data = {'net':net}
     return render(request, 'skil/excel_test.html', data)
 
-def Eanswer(request):
-    return render(request, 'skil/Eanswer.html')
+def Eanswer(request, excel_id):
+    #if request.method == 'GET':
+    excel = Equestion.objects.filter(id__gte=10*excel_id-9).filter(id__lt=10*excel_id+1)
+    data = {'excel':excel}
+    return render(request, 'skil/Eanswer.html', data)
 
 def Nanswer(request):
     return render(request, 'skil/Nanswer.html')

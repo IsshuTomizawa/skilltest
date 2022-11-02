@@ -7,7 +7,7 @@ urlpatterns = [
     path('esele/', views.esele, name='ES'),
     path('<int:net_id>/nettest/', views.nettest, name='NT'),
     path('<int:excel_id>/exceltest/', views.exceltest, name='ET'),
-    path('Nanswer/', views.Nanswer, name='Nanswer'),
-    path('Eanswer/', views.Eanswer, name='Eanswer'),
+    path('<int:net_id>/Nanswer/', views.Nanswer, name='Nanswer'),
+    path('<int:excel_id>/Eanswer/', views.Eanswer, name='Eanswer'),
     path('percent/', views.percent, name='percent'),
 ]
