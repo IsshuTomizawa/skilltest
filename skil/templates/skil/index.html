@@ -25,13 +25,13 @@
                         <a class="nav-link active" aria-current="page" href="#">Home</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="#">Excel</a>
+                        <a class="nav-link" href="{% url 'ES' %}">Excel</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="#">Net</a>
+                        <a class="nav-link" href="{% url 'NS' %}">Net</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="#">年齢別正答率</a>
+                        <a class="nav-link" href="{% url 'percent' %}">年齢別正答率</a>
                       </li>
                     </ul>
                   </div>
@@ -56,5 +56,3 @@
             {% csrf_token %}
             <button type="submit">年齢別正答率</button><!--percentへ-->
         </form>
-    </body>
-</html>
