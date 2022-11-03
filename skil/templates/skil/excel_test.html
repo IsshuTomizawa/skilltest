@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html>
+{% load static %}
+<html lang="ja" dir="ltr">
     <head>
         <meta charset="UTF-8">
         <title>excel test</title>
@@ -11,17 +12,18 @@
         
         <p>excel test</p>
 
-        <form id="Q1">
-            
+        <form id="Q1" method="post">
+            {% csrf_token %}
             <p>Q1. {{ excel.0.ques }}</p>
-            <label for="radio11">{{ excel.0.sele1 }}</label>
-            <input id="radio11" name="option" type="radio" value="1">
-            <label for="radio12">{{ excel.0.sele2 }}</label>
-            <input id="radio12" name="option" type="radio" value="2">
-            <label for="radio13">{{ excel.0.sele3 }}</label>
-            <input id="radio13" name="option" type="radio" value="3">
+            <label for="radio11">{{ excel.0.sele1 }}
+            <input id="radio11" name="option0" type="radio" value="1"></label>
+            <label for="radio12">{{ excel.0.sele2 }}
+            <input id="radio12" name="option0" type="radio" value="2"></label>
+            <label for="radio13">{{ excel.0.sele3 }}
+            <input id="radio13" name="option0" type="radio" value="3"></label>
             <br>
         </form>
+        <p id="output">change</p>
 
         <form id="Q2">
             
@@ -131,6 +133,60 @@
         <br>
         </form>
 
+        <!--
+        <div>
+            <input type="button" value="Check" id="checkButton">
+        </div>
+
+        <script>
+            function buttonClick(){
+              let checkValue = '';
+            
+              for (let i = 0; i < len; i++){
+                if (excelRadio.item(i).checked){
+                  checkValue = excelRadio.item(i).value;
+                }
+              }
+              console.log('選択されているのは ' + checkValue + ' です');
+            }
+            
+            let excelRadio = document.getElementsByName('option0');
+            let len = excelRadio.length;
+            excelRadio[0].checked = true;
+            
+            let checkButton = document.getElementById('checkButton');
+            checkButton.addEventListener('click', buttonClick);
+        </script>
+        -->
+        
+        <script>
+            let radio_btns = document.querySelectorAll(`input[type='radio'][name='option0']`);
+
+            for (let target of radio_btns) {
+                target.addEventListener(`change`, () => {
+                    var radio = document.querySelector('[name="option0"]:checked');
+                    var val = radio.value;
+                    var text = radio.parentElement.innerText;
+
+                    var elemShowExcel = document.getElementById('output');
+                    /*elemShowExcel.innerHTML = 'value : ' + val;
+                    elemShowExcel.innerHTML += '<br>';
+                    elemShowExcel.innerHTML += 'a : ' + text;
+                    elemShowExcel.innerHTML += '<br>';
+                    elemShowExcel.innerHTML += 'answer : {{excel.0.answer}}'*/
+                    if (val == '{{excel.0.answer}}') {
+                        elemShowExcel.innerHTML = 'T'
+                    } else {
+                        elemShowExcel.innerHTML = 'F'
+                    }
+                });
+            }
+        </script>
+        
+        
+
+        
+
         {% if not excel.has_next %}
             {% if '5' in request.get_full_path %}
             <form action="{% url 'Eanswer' excel_id=5 %}" method="post">
@@ -159,6 +215,12 @@
             </form>
             {% endif %}
         {% endif %}
+
+        <form method="post">
+        {% csrf_token %}
+        <input id="1" name="title" type="text">
+        <button type="submit">送信</button>
+        </form>
     </body>
     
 </html>

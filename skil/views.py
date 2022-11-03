@@ -17,18 +17,13 @@ def nsele(request):
     return render(request, 'skil/nsele.html')
 
 def exceltest(request, excel_id):
-    #if request.method == 'GET':
-    '''
-        exc = Equestion.objects.filter(id__gte=10*excel_id-9).filter(id__lt=10*excel_id+1)
-        paginator = Paginator(exc, 1)
-        p = request.GET.get('p')
-        excel = paginator.get_page(p)
+    if request.method == 'GET':
+        excel = Equestion.objects.filter(id__gte=10*excel_id-9).filter(id__lt=10*excel_id+1)
         data = {'excel':excel}
-        '''
-    excel = Equestion.objects.filter(id__gte=10*excel_id-9).filter(id__lt=10*excel_id+1)
-    data = {'excel':excel}
-    return render(request, 'skil/excel_test.html', data)
-    #elif request.method == 'POST':
+        return render(request, 'skil/excel_test.html', data)
+    elif request.method == 'POST':
+        ans = request.POST.get('option0', None)
+        return HttpResponse('ans: {}'.format(ans))
         
 
 def nettest(request, net_id):
