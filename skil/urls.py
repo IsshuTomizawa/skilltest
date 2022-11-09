@@ -9,5 +9,6 @@ urlpatterns = [
     path('<int:excel_id>/exceltest/', views.exceltest, name='ET'),
     path('<int:net_id>/Nanswer/', views.Nanswer, name='Nanswer'),
     path('<int:excel_id>/Eanswer/', views.Eanswer, name='Eanswer'),
-    path('percent/', views.percent, name='percent'),
+    path('Epercent/', views.epercent, name='Epercent'),
+    path('Npercent/', views.npercent, name='Npercent'),
 ]

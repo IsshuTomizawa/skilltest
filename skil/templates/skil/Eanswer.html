@@ -10,12 +10,70 @@
         <br>
         
         <h1>Answer</h1>
+        <!--
+        {{yans}}
+        <br>
+        <br>
+        {{ans}}
+        <br>
+        <br>
+        -->
+        <p>Q{{excel.0.number}}. {{excel.0.ques}}</p>
+        <p>{{ans.0}}</p>
+        <p>あなたの選択 : {{yans.0}}</p>
+        <p>answer:{{excel.0.answer}}</p>
 
-        {% for ex in excel %}
-            {{ ex.number }}. {{ ex.answer }}
-            <br>    
-        {% endfor %}
+        <p>Q{{excel.1.number}}. {{excel.1.ques}}</p>
+        <p>{{ans.1}}</p>
+        <p>あなたの選択 : {{yans.1}}</p>
+        <p>answer:{{excel.1.answer}}</p>
+
+        <p>Q{{excel.2.number}}. {{excel.2.ques}}</p>
+        <p>{{ans.2}}</p>
+        <p>あなたの選択 : {{yans.2}}</p>
+        <p>answer:{{excel.2.answer}}</p>
+ 
+        <p>Q{{excel.3.number}}. {{excel.3.ques}}</p>
+        <p>{{ans.3}}</p>
+        <p>あなたの選択 : {{yans.3}}</p>
+        <p>answer:{{excel.3.answer}}</p>
+
+        <p>Q{{excel.4.number}}. {{excel.4.ques}}</p>
+        <p>{{ans.4}}</p>
+        <p>あなたの選択 : {{yans.4}}</p>
+        <p>answer:{{excel.4.answer}}</p>
+ 
+        <p>Q{{excel.5.number}}. {{excel.5.ques}}</p>
+        <p>{{ans.5}}</p>
+        <p>your answer:{{yans.5}}</p>
+        <p>answer:{{excel.5.answer}}</p>
+ 
+        <p>Q{{excel.6.number}}. {{excel.6.ques}}</p>
+        <p>{{ans.6}}</p>
+        <p>your answer:{{yans.6}}</p>
+        <p>answer:{{excel.6.answer}}</p>
+ 
+        <p>Q{{excel.7.number}}. {{excel.7.ques}}</p>
+        <p>{{ans.7}}</p>
+        <p>your answer:{{yans.7}}</p>
+        <p>answer:{{excel.7.answer}}</p>
+
+        <p>Q{{excel.8.number}}. {{excel.8.ques}}</p>
+        <p>{{ans.8}}</p>
+        <p>your answer:{{yans.8}}</p>
+        <p>answer:{{excel.8.answer}}</p>
+
+        <p>Q{{excel.9.number}}. {{excel.9.ques}}</p>
+        <p>{{ans.9}}</p>
+        <p>your answer:{{yans.9}}</p>
+        <p>answer:{{excel.9.answer}}</p>
 
         <a href="{% url 'ES' %}">選択画面へ</a>
     </body>
 </html>
+
+<!--
+    解答ページの表示内容は
+    問の番号、問題、ユーザーの回答、正誤、解答
+    でいい？何かほかにあれば教えてほしい
+-->
