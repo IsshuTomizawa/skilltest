@@ -3,6 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <title>office skilltest ホームページ</title>
+        <link href="index.css" rel="stylesheet" type="text/css">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     </head>
@@ -12,8 +13,8 @@
 
     <body>
         
-        <header>
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <header class="sticky-top">    <!--ヘッダー-->
+            <nav class="navbar navbar-expand-lg navbar-light bg-light headerbox">
                 <div class="container-fluid">
                   <a class="navbar-brand" href="#">Office スキルテスト</a>
                   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -31,7 +32,7 @@
                         <a class="nav-link" href="{% url 'NS' %}">Net</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="{% url 'Epercent' %}">年齢別正答率</a>
+                        <a class="nav-link" href="{% url 'percent' %}">年齢別正答率</a>
                       </li>
                     </ul>
                   </div>
@@ -39,16 +40,25 @@
               </nav>
         </header>
 
-        <div class="card bg-dark text-dark">
-            <img src="assets/images/bs-images/img-2x1.png" class="card-img" alt="card-img-overlay">
+
+
+
+        <div class="card bg-dark text-dark midasibox border border-0">    <!--見出し画像エリア-->
+            <img src="https://dekiru.net/upload_docs/img/20200331_o0100.jpg" class="card-img" alt="card-img-overlay">
             <div class="card-img-overlay">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
-              <p class="card-text">Last updated 3 mins ago</p>
+              <div class="mainimg">
+                <h5 class="card-title headlinecatchcopy">企業選びをサポートする<br>Officeスキルテスト</h5>
+                <p class="headercard-text">IT系に就職したいけど今の自分のスキルで選んでいいのか不安、そもそも自分のスキルがどのくらいかわからない。
+                  そんな悩みを解決します。
+                </p>
+                <p class="headercard-text lastheadertext">まずは自分の実力を知ることから始めましょう。</p>
+                <a href="{% url 'ES' %}" class="btn btn-primary btn-lg startbtn">今すぐ始める</a>
+              </div>  
             </div>
           </div>
 
-        <br>
+
+
         <br>
         <br>
         <br>
@@ -56,8 +66,83 @@
 
 
 
-        <p>このページはofficeソフトを勉強する人たちに対してのスキルテストです。</p>
+        <div class="kokokara">
+          <h5 class="headlinecatchcopy">まずはここから始めよう</h5>
+          <div class=" kokokaracard">
+            <div class="card kokokaracaardel" style="width: 20rem;">
+              <img src="img/若葉マーク.svg" class="card-img-top kokokaraimg" alt="card-grid-image">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              </div>
+            </div>
+            
+            
+            <div class="card kokokaracaardel" style="width: 20rem;">
+              <img src="img/フラグ.svg" class="card-img-top kokokaraimg" alt="card-grid-image">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              </div>
+            </div>
+            
+            
+            <div class="card kokokaracaardel" style="width: 20rem;">
+              <img src="img/ビジネス人.svg" class="card-img-top kokokaraimg" alt="card-grid-image">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+
+
         <br>
+        <br>
+
+
+        <div class="container">
+          <div class="card mb-3 excellink" style="width: 540px;">    <!--Excelリンクゾーン-->
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="img/icons8-マイクロソフトエクセル2019-240.svg" alt="...">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">Excel</h5>
+                  <p class="card-text">MicrosoftOfficeから提供されているソフトまずはOfficeの基本であるExcelから始めてみましょう</p>
+                  <a href="{% url 'ES' %}" class="btn btn-primary startbtn">Start</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+          <br>
+
+
+
+          <div class="card mb-3 netllink" style="width: 540px;">    <!--netリンクゾーン-->
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="img/インターネットのアイコン.svg" alt="...">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">net</h5>
+                  <p class="card-text">社会人に必要なネットスキルが備わっているか確認できます</p>
+                  <a href="{% url 'NS' %}" class="btn btn-primary">Start</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
         <p>
         <a href="{% url 'ES' %}">excel</a>
         </p>
