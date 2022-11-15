@@ -1,0 +1,88 @@
+.mt5 { margin-top: 5px; }
+
+.mb5 { margin-bottom: 5px;}
+.mb40 { margin-bottom: 40px;}
+.mb45 { margin-bottom: 45px;}
+
+.pt20 { padding-top: 20px;}
+
+.pl50 { padding-left: 50px;}
+
+.pr50 { padding-right: 50px;}
+
+.headerbox {
+    height: 80px;
+    font-weight: bold;
+    position:fixed;
+}
+
+.midasibox {
+    box-shadow: 0 10px 25px 0 rgba(46, 45, 45, 0.6);
+}
+
+
+.startbtn {
+    box-shadow: 0 10px 10px 0 rgb(132, 204, 255);
+}
+
+.headercard-text {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.lastheadertext {
+    padding-bottom: 20px;
+}
+
+
+.mainimg {
+    background-color:rgba(255,255,255,0.6);
+    padding: 20%;
+    text-align: center;
+}
+
+
+.headlinecatchcopy {
+    font-size: 60px;
+    font-family: "cursive";
+    font-weight: bold;
+}
+
+.excellink {
+    box-shadow: 0 10px 25px 0 rgba(109, 229, 121, 0.6);
+}
+
+.netllink {
+    box-shadow: 0 10px 25px 0 rgb(13, 154, 224);
+}
+
+.kokokara {
+    padding: 20px;
+    text-align: center;
+    padding-top: 50px;
+    width: 100%;
+}
+
+
+.kokokaracard {
+    display: flex;
+    margin:0 auto;
+}
+
+.kokokaracardel {
+    margin:0 auto;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.ht {
+    width: 160px;
+    height: 160px;
+}
+
+.wd {
+    width: 300px;
+}
